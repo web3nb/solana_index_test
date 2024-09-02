@@ -1,0 +1,33 @@
+type BlockMeta @entity {
+  "The unique identifier for the block"
+  id: ID! @id
+
+  "The hash of the block"
+  hash: String!
+
+  "The hash of the parent block"
+  parentHash: String
+
+  "The slot of the block"
+  slot: String!
+
+  timestamp: BigInt
+
+  transactions_count: BigInt
+}
+
+type Instruction @entity {
+  id: ID! @id
+  transaction_id: ID!
+  transaction: Transaction @derivedFrom(field: "instructions")
+  program_id: String!
+  data: String
+  accounts: String! 
+}
+
+type Transaction @entity {
+  id: ID! @id
+  signatures: String!
+  instructions: [Instruction!]
+  timestamp: BigInt
+}

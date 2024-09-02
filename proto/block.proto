@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package sol.block.v1;
+
+message BlockMetas {
+  repeated BlockMeta BlockMetas = 1;
+}
+
+message BlockMeta {
+  uint64 slot = 1;
+  string hash = 2;
+  string parent_hash = 3;
+  uint64 timestamp = 4;
+  uint64 transactions_count = 5;
+}

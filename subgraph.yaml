@@ -1,0 +1,39 @@
+
+specVersion: 0.0.4
+description: Solana Transaction Tracking Subgraph (powered by Substreams)
+repository: https://github.com/graphprotocol/graph-tooling
+schema:
+  file: schema.graphql
+dataSources:
+  # - kind: substreams
+  #   name: substream_metadata
+  #   network: solana-mainnet-beta
+  #   source:
+  #     package:
+  #       moduleName: graph_out
+  #       file: solana-explorer-v0.2.0.spkg
+  #   mapping:
+  #     kind: substreams/graph-entities
+  #     apiVersion: 0.0.5
+  # - kind: substreams
+  #   name: substream_instructions
+  #   network: solana-mainnet-beta
+  #   source:
+  #     package:
+  #       moduleName: graph_instructions_out
+  #       file: solana-explorer-v0.2.0.spkg
+  #     startBlock: 41000000
+  #   mapping:
+  #     kind: substreams/graph-entities
+  #     apiVersion: 0.0.5
+  - kind: substreams
+    name: substream_transtacions
+    network: solana-mainnet-beta
+    source:
+      package:
+        moduleName: graph_transactions_out
+        file: solana-explorer-v0.2.0.spkg
+      startBlock: 41000000
+    mapping:
+      kind: substreams/graph-entities
+      apiVersion: 0.0.5
